@@ -1,0 +1,87 @@
+# ===================================================================
+# .gitignore Definitivo para Projeto Next.js + TypeScript + Vercel
+# ===================================================================
+
+# 1. DEPENDÊNCIAS E GERENCIADORES DE PACOTES
+# -------------------------------------------------------------------
+# Ignora as pastas de dependências. Elas são instaladas via 'npm/yarn/pnpm install'.
+/node_modules
+/coverage
+/.pnp
+.pnp.*
+
+# Regras específicas para Yarn Berry (Plug'n'Play), permitindo que patches,
+# plugins e versões sejam versionados, conforme as melhores práticas.
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# 2. CACHE E ARQUIVOS DE BUILD
+# -------------------------------------------------------------------
+# Pastas de build geradas pelo Next.js e outros processos.
+# São geradas novamente em cada build, então não devem ser versionadas.
+.next
+/.next/
+/out/
+/build/
+/dist/
+
+# Cache de build do TypeScript.
+*.tsbuildinfo
+
+# 3. SEGURANÇA: VARIÁVEIS DE AMBIENTE E ARQUIVOS SENSÍVEIS
+# -------------------------------------------------------------------
+# CRÍTICO: Nunca envie arquivos .env para um repositório público.
+# Eles contêm segredos, chaves de API e senhas.
+.env*
+!.env.example
+!.env.sample
+
+# Arquivos de chave privada (ex: para certificados SSL).
+*.pem
+
+# 4. LOGS E RELATÓRIOS
+# -------------------------------------------------------------------
+# Arquivos de log de depuração gerados por diferentes gerenciadores de pacotes.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+report.html
+
+# 5. ARQUIVOS DE SISTEMA OPERACIONAL E EDITOR DE CÓDIGO
+# -------------------------------------------------------------------
+# Arquivos específicos de SO e editores que não pertencem ao projeto.
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+
+# Configurações locais do VS Code (permite compartilhar configurações de projeto).
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# 6. ARQUIVOS ESPECÍFICOS DE PLATAFORMAS E FRAMEWORKS
+# -------------------------------------------------------------------
+# Pasta de configuração local da Vercel CLI.
+.vercel
+
+# Arquivo de tipos gerado pelo Next.js. É recriado automaticamente.
+next-env.d.ts
+
+# Media files
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+
+# ===================================================================
+# Fim do arquivo .gitignore
+# ===================================================================
